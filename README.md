@@ -1,55 +1,126 @@
-# Phaser 3 Webpack Project Template
+Repo template from https://github.com/digitsensitive/phaser3-typescript
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/)
-that includes hot-reloading for development and production-ready builds.
+# Messing around with Phaser 3 and TypeScript
 
-Loading images via JavaScript module `import` is also supported.
+## Getting started
 
-## Requirements
+### Prerequisites
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+```
+Download and install npm with Node.js @ https://nodejs.org/en
+```
 
-## Available Commands
+### Installing
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
+Select a folder, navigate to it, and clone this repository
+with this command-line:
 
-## Writing Code
+```
+git clone https://github.com/digitsensitive/phaser3-typescript.git
+```
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
-server by running `npm start`.
+Install the dependencies with this command-line:
 
+```
+npm install
+```
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder
-and webpack will automatically recompile and reload your server (available at `http://localhost:8080`
-by default).
+### Building and Running
 
-## Customizing Template
+Perform a quick build (bundle.js) and start server:
 
-### Babel
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you
-want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently
-targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+```
+npm run dev
+```
 
-  ```
-  "browsers": [
-    ">0.25%",
-    "not ie 11",
-    "not op_mini all"
-  ]
-  ```
+## Game Examples
 
-### Webpack
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can
-modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create
-new configuration files and target them in specific npm tasks inside of `package.json'.
+Check the `package.json` for the correct scripts to start projects.
+For example you can start the `Candy Crush` project with:
 
-## Deploying Code
-After you run the `npm run build` command, your code will be built into a single bundle located at 
-`dist/bundle.min.js` along with any other assets you project depended. 
+```
+npm run candy-crush
+```
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), 
-you should be able to open `http://mycoolserver.com/index.html` and play your game.
+- [Coin Runner](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/coin-runner)
+- [Alpha Adjust](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/alpha-adjust)
+- [Snake](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/snake)
+- [Blockade](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/blockade)
+- [Asteroid](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/asteroid)
+- [Flappy Bird](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/flappy-bird)
+- [Space Invaders](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/space-invaders)
+- [Super Mario Land](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/super-mario-land)
+- [Candy Crush](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/candy-crush)
+
+If you have any suggestion for a next game example, let me know!
+
+## Experimental fun projects
+
+Check the `package.json` for the correct scripts to start projects.
+For example you can start the `Game of Life` project with:
+
+```
+npm run game-of-life
+```
+
+- [Game of Life](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/game-of-life)
+- [Raycasting](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/raycasting)
+- [Untextured Raycaster](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/untextured-raycaster)
+- [Point in Polygon](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/point-in-polygon)
+- [Fractal Tree](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/fractal-tree)
+- [Lissajous curve](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/lissajous-curve)
+- [Procedural Generation](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/procedural-generation)
+- [Cellular Automaton](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/cellular-automaton)
+
+## Game Programming Patterns
+
+Check the `package.json` for the correct scripts to start projects.
+For example you can start the `Factory Method` project with:
+
+```
+npm run factory-method
+```
+
+- [Factory Method](https://github.com/digitsensitive/phaser3-typescript/blob/master/patterns/creational-design-patterns/factory-method)
+
+## Cheat Sheets
+
+- [Browse through the Cheat Sheets](https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets)
+
+## Tutorials
+
+- [Learn to create a HTML5 Game in 5 Minutes](https://medium.com/@digit.sensitivee/learn-to-create-a-html5-game-in-5-minutes-604118f5d0ab)
+- [Game Programming Patterns: The Factory Method by Example](https://medium.com/@digit.sensitivee/game-programming-patterns-the-factory-method-87d7f8c12081)
+
+## External Resources
+
+- [Phaser 3 Framework](https://github.com/photonstorm/phaser)
+- [Phaser 3 Docs with TypeScript Definition File](https://github.com/photonstorm/phaser3-docs)
+- [Phaser 3 Online Docs](https://photonstorm.github.io/phaser3-docs/index.html)
+- [Phaser 3 Official Examples](https://github.com/photonstorm/phaser3-examples)
+- [Phaser 3 Discourse](https://phaser.discourse.group)
+
+## Helpful tools
+
+- [Leshy SpriteSheet Tool](https://www.leshylabs.com/apps/sstool)
+- [Tiled](https://www.mapeditor.org)
+- [Littera](http://kvazars.com/littera)
+- [Tile Extruder](https://github.com/sporadic-labs/tile-extruder)
+
+## TypeScript Configuration
+
+### tsconfig.json
+
+The following `Compiler Options` have been set in the `tsconfig.json` file:
+
+| Option | Value     |
+| :------------- | :------------- |
+| target       | ES2016 |
+| module       | CommonJS |
+| sourceMap    | true |
+| noImplicitAny| true [WIP] |
+| strict       | true [WIP] |
+
+You can see the complete list of the available options at [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+Interesting read about [setting up a nodejs-project](https://codeburst.io/tips-for-setting-up-a-typescript-nodejs-project-5d1c48dc1a2d).
+
