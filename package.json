@@ -1,44 +1,36 @@
 {
-  "name": "phaser3-typescript",
-  "version": "1.4.1",
-  "description": "Boilerplate, Game Examples, Cheat Sheets and Tutorials for Phaser 3 in TypeScript",
-  "devDependencies": {
-    "expose-loader": "0.7.5",
-    "ts-loader": "6.0.4",
-    "typescript": "3.5.2",
-    "webpack": "4.35.2",
-    "webpack-cli": "3.3.5",
-    "webpack-dev-server": "^3.11.0"
-  },
-  "dependencies": {
-    "phaser": "3.24.1"
-  },
-  "scripts": {
-    "start-boilerplate": "cd src/boilerplate && yarn install && yarn run dev",
-    "build-boilerplate": "cd src/boilerplate && yarn install && yarn run build",
-    "dev": "webpack --mode development && webpack-dev-server --mode development",
-    "build": "webpack --mode production && webpack-dev-server --mode production",
-    "candy-crush": "cd src/games/candy-crush && yarn install && yarn run dev",
-    "factory-method": "cd patterns/creational-design-patterns/factory-method && yarn install && yarn run dev",
-    "raycasting": "cd src/experimental/raycasting && yarn install && yarn run dev",
-    "untextured-raycaster": "cd src/experimental/untextured-raycaster && yarn install && yarn run dev",
-    "game-of-life": "cd src/experimental/game-of-life && yarn install && yarn run dev",
-    "point-in-polygon": "cd src/experimental/point-in-polygon && yarn install && yarn run dev",
-    "fractal-tree": "cd src/experimental/fractal-tree && yarn install && yarn run dev",
-    "lissajous-curve": "cd src/experimental/lissajous-curve && yarn install && yarn run dev",
-    "procedural-generation": "cd src/experimental/procedural-generation && yarn install && yarn run dev"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/digitsensitive/phaser3-typescript.git"
-  },
-  "author": {
-    "name": "digitsensitive",
-    "email": "digit.sensitivee@gmail.com"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/digitsensitive/phaser3-typescript/issues"
-  },
-  "homepage": "https://github.com/digitsensitive/phaser3-typescript#readme"
+	"name": "phaser3-parcel-template",
+	"version": "1.0.0",
+	"description": "A template project for Phaser3 using Parceljs",
+	"scripts": {
+		"start": "parcel src/index.html -p 8000",
+		"build": "parcel build src/index.html --out-dir dist",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint ./src --ext .js,.jsx,.ts,.tsx"
+	},
+	"author": "stschmaltz",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stschmaltz/phaser-fun"
+	},
+	"homepage": "https://github.com/stschmaltz/phaser-fun",
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^4.7.0",
+		"@typescript-eslint/parser": "^4.7.0",
+		"eslint": "^7.13.0",
+		"minimist": ">=1.2.5",
+		"parcel-plugin-clean-easy": "^1.0.2",
+		"parcel-plugin-static-files-copy": "^2.5.0",
+		"typescript": "^4.0.5"
+	},
+	"dependencies": {
+		"phaser": "^3.24.1"
+	},
+	"parcelCleanPaths": [
+		"dist"
+	],
+	"staticFiles": {
+		"staticPath": "public",
+		"watcherGlob": "**"
+	}
 }

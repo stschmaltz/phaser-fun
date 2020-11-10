@@ -1,126 +1,71 @@
-Repo template from https://github.com/digitsensitive/phaser3-typescript
 
-# Messing around with Phaser 3 and TypeScript
+# Phaser3 + TypeScript + Parcel Template
+> For people who want to spend time making Phaser 3 games in TypeScript instead of configuring build tools.
 
-## Getting started
 
-### Prerequisites
 
-```
-Download and install npm with Node.js @ https://nodejs.org/en
-```
+## Getting Started
 
-### Installing
-
-Select a folder, navigate to it, and clone this repository
-with this command-line:
-
-```
-git clone https://github.com/digitsensitive/phaser3-typescript.git
-```
-
-Install the dependencies with this command-line:
-
-```
+```bash
 npm install
 ```
 
-### Building and Running
-
-Perform a quick build (bundle.js) and start server:
+Start development server:
 
 ```
-npm run dev
+npm run start
 ```
 
-## Game Examples
-
-Check the `package.json` for the correct scripts to start projects.
-For example you can start the `Candy Crush` project with:
+To create a production build:
 
 ```
-npm run candy-crush
+npm run build
 ```
 
-- [Coin Runner](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/coin-runner)
-- [Alpha Adjust](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/alpha-adjust)
-- [Snake](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/snake)
-- [Blockade](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/blockade)
-- [Asteroid](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/asteroid)
-- [Flappy Bird](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/flappy-bird)
-- [Space Invaders](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/space-invaders)
-- [Super Mario Land](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/super-mario-land)
-- [Candy Crush](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/games/candy-crush)
+Production files will be placed in the `dist` folder. Then upload those files to a web server. 🎉
 
-If you have any suggestion for a next game example, let me know!
+## Static Assets
 
-## Experimental fun projects
+Any static assets like images or audio files should be placed in the `public` folder. It'll then be served at http://localhost:8000/images/my-image.png
 
-Check the `package.json` for the correct scripts to start projects.
-For example you can start the `Game of Life` project with:
+Example `public` structure:
 
 ```
-npm run game-of-life
+    public
+    ├── images
+    │   ├── my-image.png
+    ├── music
+    │   ├── ...
+    ├── sfx
+    │   ├── ...
 ```
 
-- [Game of Life](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/game-of-life)
-- [Raycasting](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/raycasting)
-- [Untextured Raycaster](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/untextured-raycaster)
-- [Point in Polygon](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/point-in-polygon)
-- [Fractal Tree](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/fractal-tree)
-- [Lissajous curve](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/lissajous-curve)
-- [Procedural Generation](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/procedural-generation)
-- [Cellular Automaton](https://github.com/digitsensitive/phaser3-typescript/blob/master/src/experimental/cellular-automaton)
+They can then be loaded by Phaser with `this.image.load('my-image', 'images/my-image.png')`.
 
-## Game Programming Patterns
+## TypeScript ESLint
 
-Check the `package.json` for the correct scripts to start projects.
-For example you can start the `Factory Method` project with:
+This template uses a basic `typescript-eslint` set up for code linting.
+
+It does not aim to be opinionated.
+
+## Dev Server Port
+
+You can change the dev server's port number by modifying the `start` script in `package.json`. We use Parcel's `-p` option to specify the port number.
+
+The script looks like this:
 
 ```
-npm run factory-method
+parcel src/index.html -p 8000
 ```
 
-- [Factory Method](https://github.com/digitsensitive/phaser3-typescript/blob/master/patterns/creational-design-patterns/factory-method)
+Change 8000 to whatever you want.
 
-## Cheat Sheets
+## Other Notes
 
-- [Browse through the Cheat Sheets](https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets)
+[parcel-plugin-clean-easy](https://github.com/lifuzhao100/parcel-plugin-clean-easy) is used to ensure only the latest files are in the `dist` folder. You can modify this behavior by changing `parcelCleanPaths` in `package.json`.
 
-## Tutorials
+[parcel-plugin-static-files](https://github.com/elwin013/parcel-plugin-static-files-copy#readme) is used to copy static files from `public` into the output directory and serve it. You can add additional paths by modifying `staticFiles` in `package.json`.
 
-- [Learn to create a HTML5 Game in 5 Minutes](https://medium.com/@digit.sensitivee/learn-to-create-a-html5-game-in-5-minutes-604118f5d0ab)
-- [Game Programming Patterns: The Factory Method by Example](https://medium.com/@digit.sensitivee/game-programming-patterns-the-factory-method-87d7f8c12081)
+## License
 
-## External Resources
-
-- [Phaser 3 Framework](https://github.com/photonstorm/phaser)
-- [Phaser 3 Docs with TypeScript Definition File](https://github.com/photonstorm/phaser3-docs)
-- [Phaser 3 Online Docs](https://photonstorm.github.io/phaser3-docs/index.html)
-- [Phaser 3 Official Examples](https://github.com/photonstorm/phaser3-examples)
-- [Phaser 3 Discourse](https://phaser.discourse.group)
-
-## Helpful tools
-
-- [Leshy SpriteSheet Tool](https://www.leshylabs.com/apps/sstool)
-- [Tiled](https://www.mapeditor.org)
-- [Littera](http://kvazars.com/littera)
-- [Tile Extruder](https://github.com/sporadic-labs/tile-extruder)
-
-## TypeScript Configuration
-
-### tsconfig.json
-
-The following `Compiler Options` have been set in the `tsconfig.json` file:
-
-| Option | Value     |
-| :------------- | :------------- |
-| target       | ES2016 |
-| module       | CommonJS |
-| sourceMap    | true |
-| noImplicitAny| true [WIP] |
-| strict       | true [WIP] |
-
-You can see the complete list of the available options at [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
-Interesting read about [setting up a nodejs-project](https://codeburst.io/tips-for-setting-up-a-typescript-nodejs-project-5d1c48dc1a2d).
-
+[MIT License](https://github.com/ourcade/phaser3-typescript-parcel-template/blob/master/LICENSE)
