@@ -14,7 +14,6 @@ export class Ship extends Phaser.GameObjects.Graphics {
 
         // init ship
         this.initShip();
-        this.velocity = new Phaser.Math.Vector2(0, 0); // TODO figure out why I can't just do this in initShip() (gives error)
 
         // input
         this.cursors = this.scene.input.keyboard.createCursorKeys();
@@ -31,6 +30,7 @@ export class Ship extends Phaser.GameObjects.Graphics {
         // define ship properties
         this.x = this.scene.sys.canvas.width / 2;
         this.y = this.scene.sys.canvas.height / 2;
+        this.velocity = new Phaser.Math.Vector2(0, 0); // TODO figure out why I can't just do this in initShip() (gives error)
 
         // define ship graphics and draw it
         this.lineStyle(1, 0xffffff);
@@ -60,9 +60,9 @@ export class Ship extends Phaser.GameObjects.Graphics {
         }
 
         if (this.cursors.right.isDown) {
-            this.rotation += 0.05;
+            this.rotation += 0.06;
         } else if (this.cursors.left.isDown) {
-            this.rotation -= 0.05;
+            this.rotation -= 0.06;
         }
     }
 
@@ -74,17 +74,18 @@ export class Ship extends Phaser.GameObjects.Graphics {
         );
 
         // reduce the force and apply it to the velocity
-        force.scale(0.12);
+        force.scale(0.55);
         this.velocity.add(force);
     }
 
     private applyForces(): void {
+        console.log("howdy", { x:this.x, y: this.y });
         // apple velocity to position
         this.x += this.velocity.x;
         this.y += this.velocity.y;
 
         // reduce the velocity
-        this.velocity.scale(0.98);
+        this.velocity.scale(0.91);
     }
 
     private checkIfOffScreen(): void {

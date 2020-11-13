@@ -1,7 +1,7 @@
 {
-	"name": "phaser3-parcel-template",
+	"name": "phaser-fun",
 	"version": "1.0.0",
-	"description": "A template project for Phaser3 using Parceljs",
+	"description": "Playing with phaser",
 	"scripts": {
 		"start": "parcel src/index.html -p 8000",
 		"build": "parcel build src/index.html --out-dir dist",

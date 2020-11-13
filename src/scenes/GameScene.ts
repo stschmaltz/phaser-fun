@@ -1,19 +1,23 @@
 import Phaser from "phaser";
+import { Ship } from "../objects/ship";
 
-export default class HelloWorldScene extends Phaser.Scene {
+export default class GameScene extends Phaser.Scene {
+    private player: Ship;
+
     constructor() {
         super("hello-world");
     }
 
     preload(): void {
         // this.load.setBaseURL("http://labs.phaser.io");
-
         // this.load.image("sky", "assets/skies/space3.png");
         // this.load.image("logo", "assets/sprites/phaser3-logo.png");
         // this.load.image("red", "assets/particles/red.png");
     }
 
     create(): void {
+        this.player = new Ship({ scene: this, opt: {} });
+
         // this.add.image(400, 300, "sky");
 
         // const particles = this.add.particles("red");
@@ -31,7 +35,8 @@ export default class HelloWorldScene extends Phaser.Scene {
         // logo.setCollideWorldBounds(true);
 
         // emitter.startFollow(logo);
-
-        
+    }
+    update(): void {
+        this.player.update();
     }
 }
