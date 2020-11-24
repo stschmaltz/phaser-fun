@@ -79,7 +79,7 @@ export class Ship extends Phaser.GameObjects.Graphics {
     }
 
     private applyForces(): void {
-        console.log("howdy", { x:this.x, y: this.y });
+        console.log("howdy", { x: this.x, y: this.y });
         // apple velocity to position
         this.x += this.velocity.x;
         this.y += this.velocity.y;
@@ -90,17 +90,17 @@ export class Ship extends Phaser.GameObjects.Graphics {
 
     private checkIfOffScreen(): void {
         // horizontal check
-        if (this.x > this.scene.sys.canvas.width + CONST.SHIP_SIZE) {
-            this.x = -CONST.SHIP_SIZE;
-        } else if (this.x < -CONST.SHIP_SIZE) {
-            this.x = this.scene.sys.canvas.width + CONST.SHIP_SIZE;
+        if (this.x > this.scene.sys.canvas.width - CONST.SHIP_SIZE) {
+            this.x = this.scene.sys.canvas.width - CONST.SHIP_SIZE;
+        } else if (this.x < CONST.SHIP_SIZE) {
+            this.x = CONST.SHIP_SIZE;
         }
 
         // vertical check
-        if (this.y > this.scene.sys.canvas.height + CONST.SHIP_SIZE) {
-            this.y = -CONST.SHIP_SIZE;
-        } else if (this.y < -CONST.SHIP_SIZE) {
-            this.y = this.scene.sys.canvas.height + CONST.SHIP_SIZE;
+        if (this.y > this.scene.sys.canvas.height - CONST.SHIP_SIZE) {
+            this.y = this.scene.sys.canvas.height - CONST.SHIP_SIZE;
+        } else if (this.y < CONST.SHIP_SIZE) {
+            this.y = CONST.SHIP_SIZE;
         }
     }
 }
